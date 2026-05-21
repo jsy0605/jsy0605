@@ -2,7 +2,7 @@
 
 ## 제약된 환경에서 직접 문제를 찾고,<br/>하드웨어부터 알고리즘까지 스스로 해결하는 엔지니어 정성윤입니다.
 
-### 정성윤 | Sungyoon Jeong
+### 정성윤 | Sungyoon Jung
 
 <br/>
 
@@ -12,55 +12,68 @@
 
 <img src="https://img.shields.io/badge/Embedded_SW-00599C?style=flat-square"/>&nbsp;
 <img src="https://img.shields.io/badge/Robotics-0A0A0A?style=flat-square"/>&nbsp;
-<img src="https://img.shields.io/badge/IoT-02569B?style=flat-square"/>&nbsp;
+<img src="https://img.shields.io/badge/IoT_&_HMI-02569B?style=flat-square"/>&nbsp;
 <img src="https://img.shields.io/badge/Edge_Vision-3776AB?style=flat-square"/>&nbsp;
-<img src="https://img.shields.io/badge/Mobile_App-0175C2?style=flat-square"/>
+<img src="https://img.shields.io/badge/Software_Platform-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
 
 </div>
+
+<br/>
+
+### 🎯 Core Strengths & Research Focus
+
+- 📡 **신뢰성 중심의 하드웨어 및 펌웨어 설계력**
+  - ESP32 및 Linux 환경을 기반으로 하드웨어 제약 조건을 극복하며, 네트워크 단절 상황에서도 데이터 유실률 0%를 보장하는 회복력 있는 가용 시스템을 설계합니다.
+- 🤖 **엣지 디바이스향 비전 알고리즘 최적화 연구**
+  - 제한된 자원(Jetson Orin Nano) 내에서 SAM 계열의 무거운 AI 모델을 효율적으로 운용하기 위해, 마커 포즈 추정과 경량 추적기(KCF)를 융합하는 등의 연산 최적화 파이프라인을 구축합니다.
+- 🌐 **엔드투엔드(End-to-End) 통합 시스템 구축 역량**
+  - 말단 물리 장치(Edge)의 로우레벨 제어부터 클라우드 연동 통신, 데이터를 가공 및 시각화하여 사용자가 원격 제어하는 서비스 플랫폼까지 수직적 파이프라인 전반을 자립적으로 빌드업합니다.
+- 🔬 **문제를 공학적으로 정의하는 R&D 마인드셋**
+  - 실무 산학 과제 과정에서 직면한 하드웨어 병목과 한계를 피하지 않고 학술적 연구 주제로 연결하여 해결책을 도출하며, 총 4건의 논문 게재 및 3회 연속 수상으로 이를 검증했습니다.
 
 ---
 
 ## 🛠 Featured Projects
 
-### AprilTag-FastSAM Hybrid Framework
+### 🤖 AprilTag-FastSAM Hybrid Framework `NCN LAB`
 > 연산 자원이 제한된 엣지 환경에서 고성능 제로샷 분할 모델을 실시간으로 운용하기 위한 연산 최적화 연구
 
 - **주요 구현**: AprilTag의 포즈 추정 좌표를 FastSAM의 포인트 프롬프트로 실시간 자동 변환하는 파이프라인 설계
 - **트러블슈팅**: 매 프레임 AI 추론으로 인한 병목을 해결하기 위해 초기 분할 후 **KCF Tracker**를 결합하는 하이브리드 구조 설계. 신뢰도 기반 조건부 재탐지 알고리즘으로 객체 드리프트 방지.
-- **Environment**: Python, PyTorch, FastSAM, AprilTag, KCF Tracker, NVIDIA Jetson Orin Nano, JetPack 6.0
+- **Environment**: NVIDIA Jetson Orin Nano, JetPack 6.0, Python, PyTorch, FastSAM, AprilTag, KCF Tracker
 - **📈 Results**: FastSAM 단독 구동 대비 **처리 속도 45% 향상 (7.74 FPS 확보) · GPU 점유율 18% 절감**
 
-### 실험 자동화 다관절 로봇 시스템
+### 🦾 실험 자동화 다관절 로봇 시스템 `NCN LAB · 산학`
 > 바이오 실험 자동화를 위한 UR 로봇 비전 정렬 및 피펫팅 제어 시스템 위탁 개발
 
-- **주요 구현**: 마커 인식부터 데이터 가공, 최종 분주 제어 패킷 설계까지의 전 과정을 단독으로 설계 및 통합
-- **트러블슈팅**: 카메라 좌표계와 엔드이펙터 물리 좌표계 간 **Hand-Eye 캘리브레이션**을 통해 마이크로 플레이트 well 정렬 오차 최소화. 딥러닝 OCR 기반으로 아날로그 피펫 용량을 판독하여 목표치에 맞추는 피드백 제어 알고리즘 구현.
-- **Environment**: Python 3.12, UR Robot, VmbPy (Vimba SDK), AprilTag, OCR, Alvium 1800 U-511c
-- **📈 Results**: 마커 인식부터 분주 패킷 설계까지 전 과정 단독 구현 완료 (위탁 기관 최종 보고서 제출)
+- **주요 구현**: 산업용 마커 인식부터 이미지 데이터 전처리, 최종 분주 제어 패킷 설계까지의 전 과정을 단독 설계 및 통합
+- **트러블슈팅**: 카메라 좌표계와 엔드이펙터 물리 좌표계 간 **Hand-Eye 캘리브레이션**을 통해 마이크로 플레이트 well 정렬 오차 최소화. 딥러닝 OCR 기반으로 아날로그 피펫 용량을 판독하여 목표치에 맞추는 피드백 모터 제어 알고리즘 구현.
+- **Environment**: Python 3.12, UR Robot, Alvium 1800 U-511c, VmbPy (Vimba SDK), AprilTag, OCR, RS-485 / TCP/IP 패킷 통신
+- **📈 Results**: 마커 인식부터 분주 패킷 제어 시나리오까지 전 과정 단독 구현 완료 (위탁 기관 최종 보고서 제출)
 
-### 네트워크 장애 대응형 ESP32 데이터로거
+### 📡 네트워크 장애 대응형 ESP32 데이터로거 `NCN LAB`
 > 불안정한 네트워크 환경에서도 데이터 연속성을 보장하는 사물함 로드셀 라이프로그 수집 시스템
 
 - **주요 구현**: 통신 단절 시 데이터 누락을 원천 차단하는 **Store-and-Forward 아키텍처** 설계
-- **트러블슈팅**: `httpResponseCode`를 실시간 모니터링하여 장애 발생 시 데이터를 JSON 형태로 로컬 MicroSD 카드에 자동 버퍼링. 서버 복구 감지 시 통신 오버헤드를 줄이기 위해 **50개 단위 Batch POST** 방식으로 순차적 복구 전송 구현. ESP32 구동 안정성을 위해 부트 스트래핑 핀(GPIO 2번) 간섭을 원천 배제하는 하드웨어 설계 적용.
-- **Environment**: C++, ESP32, HX711, MicroSD, REST API, NTP, Arduino IDE
+- **트러블슈팅**: `httpResponseCode`를 실시간 모니터링하여 장애 발생 시 데이터를 JSON 형태로 로컬 MicroSD 카드(SPI)에 자동 버퍼링. 서버 복구 감지 후 통신 부하 최소화를 위해 **50개 단위 Batch POST** 방식으로 순차적 복구 전송 구현. ESP32 구동 안정성을 위해 부트 스트래핑 핀(GPIO 2번) 간섭을 원천 배제하는 회로 설계 적용.
+- **Environment**: C++, ESP32, HX711 Loadcell Amp, MicroSD Module, SPI, REST API, NTP, Arduino IDE
 - **📈 Results**: 인위적인 통신 단절 및 전원 차단 반복 테스트 환경에서 **데이터 유실률 0% 달성**
 
-### Smart Doorbell Platform
+### 🏠 Smart Doorbell Platform `팀 프로젝트`
 > PIR 동작 감지, 실시간 영상/음성 스트리밍 및 원격 도어락 제어를 통합한 멀티 프로세스 IoT 보안 플랫폼 (팀장)
 
-- **주요 구현**: 병렬 처리를 극대화하여 실시간성을 확보하는 **Multi-Process 아키텍처(C + Python Flask)** 설계 및 소켓 통신 기반 상태 동기화 구현
-- **트러블슈팅**: 하드웨어 PWM 신호가 3.5mm 스피커 라인에 유발하는 화이트 노이즈를 핀 맵 변경 및 **SoftPWM** 방식으로 전환하여 제거. 카메라 모듈의 스트리밍(Picamera2)과 녹화(Libcamera-vid) 동시 점유 충돌을 **Mutex Lock** 메커니즘으로 제어.
-- **Environment**: C, Python, Flask, Flutter / Dart, Raspberry Pi 4B, Firebase, Pthread, WiringPi
+- **주요 구현**: 병렬 처리를 극대화하여 실시간성을 확보하는 **Multi-Process 아키텍처(C + Python Flask)** 설계 및 IPC 소켓 통신 기반 상태 동기화 구현
+- **트러블슈팅**: 하드웨어 PWM 신호가 오디오 라인에 유발하는 화이트 노이즈를 핀 맵 변경 및 **SoftPWM** 방식으로 전환하여 분리 처리. 카메라 모듈의 스트리밍(Picamera2)과 녹화(Libcamera-vid) 동시 점유 충돌을 **Mutex Lock** 구조로 예외 처리. 앱 단에 Push-to-Talk 인터페이스를 적용하여 오디오 오버플로우 예외 처리.
+- **Environment**: C, Python, Flask, Flutter / Dart (Mobile App), Raspberry Pi 4B, Firebase (FCM), Pthread, WiringPi
 - **📈 Results**: SoftPWM 전환으로 오디오 노이즈 제거 완료 · 프로세스 간 Mutex 동기화 구조 완성
 
-### Smart Fish Tank
+### 🐟 Smart Fish Tank `개인 프로젝트`
 > 센서 데이터 상시 수집 및 액추에이터 원격/자동 제어를 지원하는 자율 IoT 어항 관리 시스템
 
-- **주요 구현**: 수온·탁도 실시간 모니터링 및 먹이 급여(서보모터), LED, 펌프 원격 제어 시스템 구축
-- **기술적 포인트**: 카메라로 주기적으로 촬영된 이미지 데이터를 `glob`과 OpenCV 파이프라인을 통해 지능형 타임랩스 비디오 파일(`timelapse.mp4`, 2 FPS)로 변환하고 웹 스트림 형태로 자동 가공 제공
-- **Environment**: Python, Flask, OpenCV, Raspberry Pi, Firebase Storage
-- **📈 Results**: `cv2.VideoWriter` + `mp4v` 코덱 기반의 타임랩스 자동 생성 파이프라인 구축 및 자원 최적화
+- **주요 구현**: 수온·탁도 실시간 모니터링 및 먹이 급여(서보모터), LED, 양수 펌프 원격 제어 펌웨어 및 대시보드 시스템 구축
+- **기술적 포인트**: 카메라로 주기적으로 촬영된 대용량 이미지 데이터를 `glob`과 OpenCV 파이프라인을 통해 지능형 타임랩스 비디오 파일(`timelapse.mp4`, 2 FPS)로 변환하고 웹 스트림 형태로 자동 가공 제공하여 원격 가시성 확보
+- **Environment**: Python, Flask, OpenCV, Raspberry Pi, GPIO, Firebase Storage
+- **📈 Results**: `cv2.VideoWriter` + `mp4v` 코덱 기반의 데이터 비디오 변환 및 자동 생성 가비지 컬렉션 파이프라인 최적화
 
 ---
 
@@ -72,6 +85,7 @@
 - **학술 성과**: 한국정보기술학회 종합학술대회 **3회 연속 동상 수상** 및 KCI 등재지 1건 포함 총 4건의 논문 게재
 
 ---
+
 ## 🌐 Other Projects
 > 알고리즘 설계 및 데이터 시각화 관점으로 참여한 웹 플랫폼 프로젝트입니다. (학술대회 논문 게재 완료)
 
@@ -95,7 +109,7 @@
 ### Embedded & Hardware
 <p align="left">
   <img src="https://img.shields.io/badge/ESP32-E7352C?style=flat-square&logo=espressif&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Raspberry%20Pi-A22846?style=flat-square&logo=raspberrypi&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Raspberry%20Pi-A22846?style=flat-square&logo=raspberrypi&clockColor=white"/>
   <img src="https://img.shields.io/badge/NVIDIA_Jetson_Orin_Nano-76B900?style=flat-square&logo=nvidia&logoColor=white"/>
   <img src="https://img.shields.io/badge/UR_Robot-0A0A0A?style=flat-square"/>
   <img src="https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=arduino&logoColor=white"/>
@@ -111,7 +125,7 @@
   <img src="https://img.shields.io/badge/OCR-0A0A0A?style=flat-square"/>
 </p>
 
-### Frontend & App
+### Frontend & App (HMI & Connectivity)
 <p align="left">
   <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black"/>
   <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white"/>
